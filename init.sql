@@ -1,0 +1,46 @@
+-- Run this SQL in your MySQL (phpMyAdmin) to initialize the database.
+CREATE TABLE IF NOT EXISTS clients (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  company VARCHAR(255) DEFAULT NULL,
+  email VARCHAR(255) DEFAULT NULL,
+  phone VARCHAR(50) DEFAULT NULL,
+  country VARCHAR(100) DEFAULT NULL,
+  address TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS invoices (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  invoice_no VARCHAR(50) NOT NULL UNIQUE,
+  invoice_date DATE NOT NULL,
+  client_id INT NOT NULL,
+  currency VARCHAR(10) DEFAULT 'INR',
+  subtotal DECIMAL(12,2) DEFAULT 0.00,
+  total_gst DECIMAL(12,2) DEFAULT 0.00,
+  total_amount DECIMAL(12,2) DEFAULT 0.00,
+  notes TEXT,
+  terms TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (client_id) REFERENCES clients(id) ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS invoice_items (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  invoice_id INT NOT NULL,
+  description VARCHAR(255) NOT NULL,
+  hsn_code VARCHAR(50) DEFAULT NULL,
+  quantity DECIMAL(12,2) NOT NULL DEFAULT 1,
+  rate DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+  gst_percent DECIMAL(5,2) NOT NULL DEFAULT 0.00,
+  amount DECIMAL(12,2) NOT NULL DEFAULT 0.00,      -- qty * rate
+  gst_amount DECIMAL(12,2) NOT NULL DEFAULT 0.00,  -- amount * gst%
+  line_total DECIMAL(12,2) NOT NULL DEFAULT 0.00,  -- amount + gst_amount
+  FOREIGN KEY (invoice_id) REFERENCES invoices(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS invoice_numbers (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  fy_label VARCHAR(10) NOT NULL UNIQUE, -- e.g., 25-26
+  last_seq INT NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

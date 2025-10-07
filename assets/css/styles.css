@@ -30,7 +30,7 @@ a { color: var(--primary); text-decoration: none; }
 
 .table { width:100%; border-collapse: collapse; background: var(--card); border:1px solid var(--border); border-radius:10px; overflow:hidden; }
 .table th, .table td { padding:10px 12px; border-bottom:1px solid var(--border); text-align:left; }
-.table th { background:#f8fafc; color:var(--text); font-weight:600; }
+.table th { background:#d2e9ff; color:var(--text); font-weight:600; }
 .table tr:last-child td { border-bottom:none; }
 
 .form { background: var(--card); border:1px solid var(--border); border-radius:12px; padding:16px; display:grid; gap:12px; }

@@ -41,7 +41,7 @@ if (method_exists($stmt, 'get_result')) {
   </div>
 
    <div class="bill-to">
-<img src="<?= BASE_URL ?>/assets/img/logo_new.png" alt="Company Logo" width="180" style="padding-top: 15px;">
+<img src="<?= BASE_URL ?>/assets/img/logo_new.png" alt="Company Logo" width="220" style="padding-top: 15px;">
     <br><h3 style="margin: 0; padding: 0; !important">iThots Technology Solutions Pvt. Ltd</h3>
 #44, 37th Street, G.K.M Colony,<br>
 Chennai - 600082.<br>
@@ -57,19 +57,19 @@ www.ithots.com | accounts@ithots.com<br>
     <?php if ($inv['c_address']) echo '<div>'.htmlspecialchars($inv['c_address']).'</div>'; ?>
      <?php if ($inv['c_country']) echo '<div>'.htmlspecialchars($inv['c_country']).'</div>'; ?>
      <br>
-    <?php if ($inv['c_email']) echo '<div>'.htmlspecialchars($inv['c_email']).'</div>'; ?>
-    <?php if ($inv['c_phone']) echo '<div>'.htmlspecialchars($inv['c_phone']).'</div>'; ?>
+    <?php if ($inv['c_email']) echo '<div>Email: '.htmlspecialchars($inv['c_email']).'</div>'; ?>
+    <?php if ($inv['c_phone']) echo '<div>Phone: '.htmlspecialchars($inv['c_phone']).'</div>'; ?>
   </div>
 
 
 
- <div class="title" style="text-align: center; font-size: 14px; font-weight: bold;">INVOICE</div>
+ <div class="title" style="text-align: center; font-size: 16px; font-weight: bold;">INVOICE</div>
 
 
 
 
 
-<div class="meta" style="padding-bottom: 15px; line-height: 1;">
+<div class="meta" style="padding-bottom: 15px; line-height: 2;">
       <div><strong>Invoice No.:</strong> <?php echo htmlspecialchars($inv['invoice_no']); ?></div>
       <div><strong>Date:</strong> <?php echo htmlspecialchars($inv['invoice_date']); ?></div>
     </div>

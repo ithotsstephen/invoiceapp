@@ -33,16 +33,16 @@ if (method_exists($stmt, 'get_result')) {
 ?>
 <section class="invoice">
   <div class="invoice-header">
-    <div class="title">INVOICE</div>
-    <div class="meta">
+    <!-- <div class="title">INVOICE</div> -->
+    <!-- <div class="meta">
       <div><strong>Invoice No.:</strong> <?php echo htmlspecialchars($inv['invoice_no']); ?></div>
       <div><strong>Date:</strong> <?php echo htmlspecialchars($inv['invoice_date']); ?></div>
-    </div>
+    </div> -->
   </div>
 
    <div class="bill-to">
-<img src="<?= BASE_URL ?>/assets/img/logo_new.png" alt="Company Logo" width="150">
-    <h3 style="margin: 0; padding: 0; !important">iThots Technology Solutions Pvt. Ltd</h3>
+<img src="<?= BASE_URL ?>/assets/img/logo_new.png" alt="Company Logo" width="180" style="padding-top: 15px;">
+    <br><h3 style="margin: 0; padding: 0; !important">iThots Technology Solutions Pvt. Ltd</h3>
 #44, 37th Street, G.K.M Colony,<br>
 Chennai - 600082.<br>
 www.ithots.com | accounts@ithots.com<br>
@@ -60,6 +60,22 @@ www.ithots.com | accounts@ithots.com<br>
     <?php if ($inv['c_email']) echo '<div>'.htmlspecialchars($inv['c_email']).'</div>'; ?>
     <?php if ($inv['c_phone']) echo '<div>'.htmlspecialchars($inv['c_phone']).'</div>'; ?>
   </div>
+
+
+
+ <div class="title" style="text-align: center; font-size: 14px; font-weight: bold;">INVOICE</div>
+
+
+
+
+
+<div class="meta" style="padding-bottom: 15px; line-height: 1;">
+      <div><strong>Invoice No.:</strong> <?php echo htmlspecialchars($inv['invoice_no']); ?></div>
+      <div><strong>Date:</strong> <?php echo htmlspecialchars($inv['invoice_date']); ?></div>
+    </div>
+
+
+
 
   <table class="table invoice-table">
     <colgroup>
@@ -107,12 +123,12 @@ www.ithots.com | accounts@ithots.com<br>
   <?php endif; ?>
  <!-- <div class="thanks" style="margin-top: 30px; line-height: 1.6; font-size: 14px;"> -->
   <div>
-  PAN NO: AADCI8476L<br>
+  PAN No: AADCI8476L<br>
   LUT No: AD330821001209K<br>
   GSTIN: 33AADCI8476L1Z3
   <br><br>
   
-  Bank Details<br>
+  <strong>Bank Details</strong><br>
   Cheques payable to Ithots Technology Solutions Pvt. Ltd. or Online Transfer
   <br><br>
   

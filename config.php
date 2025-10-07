@@ -22,9 +22,9 @@ $COMPANY = [
     // You can use a remote URL or a path under the app root. Using the provided logo URL here.
     'logo_path' => 'https://ithots.com/wp-content/uploads/2025/08/iThots-Logo.png', // remote logo URL
     'name'      => 'iThots Technology Solutions Pvt. Ltd.',
-    'address'   => "3rd Floor, ABC Towers, Chennai - 600 000\nTamil Nadu, India",
-    'email'     => 'billing@ithots.com',
-    'phone'     => '+91-90000 00000',
+    'address'   => "#44,37th Street, G.K.M Colony, Chennai - 600082.",
+    'email'     => 'accountsg@ithots.com',
+    'phone'     => '+91-9941428273',
     'country'   => 'India',
     'prefix'    => 'ITS' // invoice prefix
 ];

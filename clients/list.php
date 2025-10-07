@@ -1,5 +1,6 @@
 <?php include __DIR__ . '/../includes/header.php'; ?>
 <h2>Clients</h2>
+<a class="btn" href="<?= BASE_URL ?>/clients/print.php">Print / Download</a>
 <?php
 // Pagination params
 $page = max(1, (int)($_GET['page'] ?? 1));
@@ -30,7 +31,7 @@ switch ($sort) {
   </form>
 </div>
 <div style="margin-bottom:8px; display:flex; gap:8px; align-items:center;">
-  <a class="btn" href="<?= BASE_URL ?>/clients/print.php">Print / Download</a>
+  
   <!-- <div style="margin-left:8px">Sort: 
     <a href="?sort=amount_desc">Amount ↓</a> | <a href="?sort=amount_asc">Amount ↑</a> | <a href="?sort=country_asc">Country</a>
   </div>
@@ -93,7 +94,6 @@ switch ($sort) {
   </tbody>
 </table>
 <?php
-// Total clients for pagination
 $countRes = $conn->query("SELECT COUNT(*) AS c FROM clients");
 $totalClients = $countRes->fetch_assoc()['c'] ?? 0;
 $totalPages = max(1, ceil($totalClients / $per_page));
